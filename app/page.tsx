@@ -1,68 +1,97 @@
-import Image from "next/image";
+import Image from "next/image"; //[cite: 1]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="flex flex-col flex-1 items-center font-sans">
+      <main className="flex flex-1 w-full max-w-4xl flex-col py-24 px-8 sm:px-16 gap-16">
+        
+        {/* Header Section */}
+        <header className="flex flex-col gap-4">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black dark:text-white">
+            Jonathan Alveraldo Bangun
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <h2 className="text-xl font-medium text-zinc-600 dark:text-zinc-400">
+            Mahasiswa Teknik Informatika @ Institut Teknologi Bandung (ITB)
+          </h2>
+          <p className="max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 mt-2">
+            Saya memiliki ketertarikan yang kuat dalam rekayasa perangkat lunak, pengembangan algoritma, serta desain infrastruktur jaringan. Aktif berpartisipasi dalam OSKM ITB dan divisi medis mahasiswa, memadukan kemampuan teknis dengan dinamika operasional tim.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </header>
+
+        {/* Technical Skills Section */}
+        <section className="flex flex-col gap-6">
+          <h3 className="text-2xl font-semibold text-black dark:text-white border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Keahlian Teknis
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-zinc-700 dark:text-zinc-300">
+            <div>
+              <h4 className="font-semibold text-black dark:text-white mb-2">Bahasa Pemrograman & Basis Data</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>C++, Python, SQL</li>
+                <li>Operasi multi-table SQL joins & conditional aggregation views</li>
+                <li>Pengembangan komponen compiler & state transition tables</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-black dark:text-white mb-2">Infrastruktur Jaringan & Tools</h4>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Jaringan OSPF multi-area & External BGP multi-AS peering</li>
+                <li>Layer 3 multilayer switching, Static/Dynamic NAT</li>
+                <li>Git (Troubleshooting & manajemen repository lokal)</li>
+                <li>Maven & PowerShell (Diagnosis bug & task packaging)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="flex flex-col gap-6">
+          <h3 className="text-2xl font-semibold text-black dark:text-white border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Proyek Pilihan
+          </h3>
+          <div className="flex flex-col gap-8">
+            
+            <div className="flex flex-col gap-2">
+              <h4 className="text-lg font-bold text-black dark:text-white">Pengembangan Algoritma & Solusi Komputasi</h4>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Merancang logika *greedy bot* untuk Battlecode 2025 dan mengimplementasikan *LinkedIn Queens solver* menggunakan algoritma *brute force* murni (*exhaustive search*). Turut melakukan optimasi struktur data dengan mengevaluasi pohon Huffman untuk memastikan *bit sequence* yang dihasilkan sesuai dengan spesifikasi aturan *target string*.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h4 className="text-lg font-bold text-black dark:text-white">Arion Compiler</h4>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Membangun fundamental kompilator dengan merancang *state transition tables* dan mengimplementasikan *dynamic lexical analyzer* yang berjalan secara efisien.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h4 className="text-lg font-bold text-black dark:text-white">Simulasi Jaringan Enterprise</h4>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Melakukan *deployment* infrastruktur jaringan kompleks yang mencakup *multi-area* OSPF dan BGP. Fokus pada *troubleshooting* batas *advertisement* BGP dan *OSPF adjacencies* melintasi antarmuka *router* yang disimulasikan.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <h4 className="text-lg font-bold text-black dark:text-white">Pengembangan Web & Antarmuka Interaktif</h4>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Membuat komponen kuis psikografis interaktif berbagai fase dengan status tata letak responsif. Juga mengembangkan website portofolio pameran bertema *vintage*, termasuk manajemen aset dan pemecahan *manifest error* saat *checkout* ke *development branch* lokal yang sudah ada sebelumnya.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Links & Contact Section */}
+        <section className="flex flex-col gap-6 w-full">
+          <h3 className="text-2xl font-semibold text-black dark:text-white border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Publikasi
+          </h3>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Saya aktif mengkatalogkan dan mempublikasikan esai pemikiran saya. Anda dapat membaca tulisan-tulisan saya di profil Medium saya.
+          </p>
+        </section>
+
       </main>
     </div>
   );
