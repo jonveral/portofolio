@@ -28,8 +28,8 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      // Hapus "fixed top-6 right-6" dan sesuaikan ukurannya
-      className="flex items-center justify-center w-9 h-9 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors"
+      // Mode terang menggunakan bg-blue-100 dan text-blue-800
+      className="flex items-center justify-center w-9 h-9 rounded-full bg-blue-100 dark:bg-zinc-800 text-blue-800 dark:text-zinc-200 hover:bg-blue-200 dark:hover:bg-zinc-700 transition-colors"
       aria-label="Toggle Dark Mode"
       title="Toggle Dark Mode"
     >

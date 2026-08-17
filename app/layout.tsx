@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Navbar"; // Import Navbar
+import Navbar from "./Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +26,12 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`} // Tambahkan scroll-smooth agar guliran menu terasa halus
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
-        <Navbar /> {/* Letakkan Navbar di sini */}
+      {/* Background diubah ke slate-50 (putih kebiruan) untuk mode terang */}
+      <body className="min-h-full flex flex-col bg-slate-50 dark:bg-black text-slate-900 dark:text-zinc-100 transition-colors duration-300">
+        <Navbar />
         {children}
       </body>
     </html>
