@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from "./ThemeToggle"; // Import komponen toggle
+import Navbar from "./Navbar"; // Import Navbar
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +26,11 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning // Mencegah warning karena perubahan class di client
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`} // Tambahkan scroll-smooth agar guliran menu terasa halus
+      suppressHydrationWarning
     >
-      {/* Tambahkan efek transisi pada body */}
       <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
-        <ThemeToggle />
+        <Navbar /> {/* Letakkan Navbar di sini */}
         {children}
       </body>
     </html>
