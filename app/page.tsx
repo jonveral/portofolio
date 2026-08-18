@@ -1,5 +1,6 @@
 import Link from "next/link";
-import FadeIn from "./FadeIn"; // Import komponen animasi kita
+import Image from "next/image"; // Import komponen Image dari Next.js
+import FadeIn from "./FadeIn";
 
 export default function Home() {
   return (
@@ -8,7 +9,6 @@ export default function Home() {
         
         {/* HERO SECTION */}
         <FadeIn delay={0.1}>
-          {/* Hapus class animate-in bawaan tailwind karena sekarang diatur Framer Motion */}
           <header className="flex flex-col gap-6 mt-12">
             <div className="flex flex-col gap-2">
               <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight">
@@ -100,7 +100,6 @@ export default function Home() {
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
             <FadeIn delay={0.2} className="h-full">
               <div className="h-full group relative flex flex-col justify-between gap-4 p-6 rounded-2xl bg-white dark:bg-zinc-950 border border-blue-100 dark:border-zinc-800 hover:border-blue-300 dark:hover:border-zinc-700 hover:shadow-xl hover:shadow-blue-900/5 transition-all">
                 <div className="flex flex-col gap-2">
@@ -157,6 +156,74 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2 mt-4">
                   <span className="text-xs font-medium px-2 py-1 bg-slate-50 dark:bg-zinc-900 border border-blue-50 dark:border-zinc-800 rounded-md text-blue-700 dark:text-zinc-400">React/Next.js</span>
                   <span className="text-xs font-medium px-2 py-1 bg-slate-50 dark:bg-zinc-900 border border-blue-50 dark:border-zinc-800 rounded-md text-blue-700 dark:text-zinc-400">Git</span>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* GALLERY SECTION */}
+        <section id="galeri" className="flex flex-col gap-6 w-full scroll-mt-24">
+          <FadeIn delay={0.1}>
+            <div className="flex items-center gap-4">
+              <h3 className="text-2xl font-bold text-blue-950 dark:text-white">Galeri & Eksplorasi Visual</h3>
+              <div className="h-px flex-1 bg-blue-100 dark:bg-zinc-800"></div>
+            </div>
+            <p className="text-slate-600 dark:text-zinc-400 mt-2">
+              Kumpulan dokumentasi kegiatan kemahasiswaan, pameran portofolio berkonsep vintage, serta momen di balik layar. Arahkan kursor ke area gambar untuk melihat detail.
+            </p>
+          </FadeIn>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+            
+            {/* Foto 1 - Lebar Penuh */}
+            <FadeIn delay={0.2} className="sm:col-span-2">
+              <div className="group relative h-64 sm:h-80 w-full overflow-hidden rounded-2xl bg-blue-50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800 flex items-center justify-center">
+                <Image 
+                  src="/galeri/foto1.webp" 
+                  alt="Pameran Portofolio Vintage" 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-white font-bold text-xl">Pameran Portofolio Vintage</h4>
+                    <p className="text-blue-100 text-sm mt-1">Mengoordinasikan umpan balik teknis fotografi dan membangun situs pameran khusus.</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Foto 2 */}
+            <FadeIn delay={0.3}>
+              <div className="group relative h-48 sm:h-64 w-full overflow-hidden rounded-2xl bg-blue-50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800 flex items-center justify-center">
+                <Image 
+                  src="/galeri/foto2.webp" 
+                  alt="Dinamika OSKM ITB" 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-white font-bold text-lg">Dinamika OSKM ITB</h4>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Foto 3 */}
+            <FadeIn delay={0.4}>
+              <div className="group relative h-48 sm:h-64 w-full overflow-hidden rounded-2xl bg-blue-50 dark:bg-zinc-900 border border-blue-100 dark:border-zinc-800 flex items-center justify-center">
+                <Image 
+                  src="/galeri/foto3.webp" 
+                  alt="Divisi Medis Mahasiswa" 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-white font-bold text-lg">Divisi Medis Mahasiswa</h4>
+                  </div>
                 </div>
               </div>
             </FadeIn>

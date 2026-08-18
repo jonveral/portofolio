@@ -21,6 +21,13 @@ export default function Navbar() {
           >
             Proyek
           </Link>
+          {/* Tambahan Tautan Galeri */}
+          <Link 
+            href="#galeri" 
+            className="text-sm font-medium text-slate-600 hover:text-blue-700 dark:text-zinc-400 dark:hover:text-white transition-colors hidden sm:block"
+          >
+            Galeri
+          </Link>
           <Link 
             href="#publikasi" 
             className="text-sm font-medium text-slate-600 hover:text-blue-700 dark:text-zinc-400 dark:hover:text-white transition-colors hidden sm:block"
